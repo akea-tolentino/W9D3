@@ -1,4 +1,5 @@
 const csrfToken = document.querySelector("meta[name=csrf-token]").content;
+export const foo = "bar";
 
 async function customFetch(url, options = {}) {
   options.headers = {

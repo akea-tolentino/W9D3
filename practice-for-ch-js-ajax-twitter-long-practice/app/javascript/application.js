@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== "production") {
   window.API = API;
 }
 
-let followToggleSelector = "";
+let followToggleSelector = ".follow-toggle";
 let infiniteTweetsSelector = "";
 let usersSearchSelector = "";
 let tweetComposeSelector = "";
@@ -19,6 +19,8 @@ let followersSelector = "";
 
 document.querySelectorAll(followToggleSelector).forEach((el) => {
   new FollowToggle(el);
+  // console.log(el);
+  // console.log("YO!"); follow/unfollow button being displayed in console
 });
 
 document.querySelectorAll(infiniteTweetsSelector).forEach((el) => {
