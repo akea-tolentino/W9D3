@@ -4,10 +4,25 @@ async function customFetch(url, options = {}) {
   options.headers = {
     // Your code here
     'X-CSRF-Token': csrfToken,
+    Accept: "application/json",
     ...options.headers
   };
-  
-  return await fetch(url, options);
+
+//   const getUsersAsync = async () => {
+//     const response = await fetch(`http:....`);
+//     if (!response.ok) {
+//         throw new Error("Oops!");
+//     }
+//     const data = await response.json();
+//     return data;
+// }
+
+  // return await fetch(url, options);
+  const response = await fetch(url, options);
+    if (!response.ok) {
+      throw response;
+    }
+    return response.json();
 }
 
  export const followUser = function (id) {
@@ -23,4 +38,3 @@ export const unfollowUser = function (id) {
 }
 
 // export const foo = "bar";
-
