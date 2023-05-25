@@ -9,7 +9,7 @@ async function customFetch(url, options = {}) {
   };
 
   // return await fetch(url, options);
-  const response = await fetch(url, options);
+  const response = await customFetch(url, options);
     if (!response.ok) {
       throw response;
     }
