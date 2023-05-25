@@ -1,4 +1,6 @@
 import { API, broadcast } from "./util";
+import { followUser } from "./util/api";
+import { unfollowUser } from "./util/api";
 
 export default class FollowToggle {
   constructor(toggleButton) {
@@ -18,15 +20,31 @@ export default class FollowToggle {
 
   async follow() {
     // Your code here
+    //1) set follow state to unfollowed
+    this.followState = "unfollowed";
+    //2) call our build utility function (follow)
+    //3) set follow state to followed
+    await followUser.then(this.followState = "followed");
   }
-
+  
   async unfollow() {
     // Your code here
+    //1) set follow state to followed
+    this.followState = "followed";
+    //2) call our build utility function (unfollow)
+    //3) set follow state to unfollowed
+    await unfollowUser.then(this.followState = "unfollowed");
   }
 
   render() {
     switch (this.followState) {
       // Your code here
+      case (this.followState === "followed"): {
+        console.log(this.followState);
+      }
+      case (this.followState === "unfollowed"): {
+        console.log(this.followState);
+      }
     }
   }
 

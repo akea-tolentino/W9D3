@@ -8,15 +8,6 @@ async function customFetch(url, options = {}) {
     ...options.headers
   };
 
-//   const getUsersAsync = async () => {
-//     const response = await fetch(`http:....`);
-//     if (!response.ok) {
-//         throw new Error("Oops!");
-//     }
-//     const data = await response.json();
-//     return data;
-// }
-
   // return await fetch(url, options);
   const response = await fetch(url, options);
     if (!response.ok) {
